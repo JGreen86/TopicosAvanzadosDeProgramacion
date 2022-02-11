@@ -98,5 +98,14 @@ public class Main {
         System.out.println("=======================");
         int c = suma(3,5);
         System.out.println("c = " + c);
+        System.out.println("=======================");
+        Alumno juan = new Alumno("C12305");
+        juan.setNombre("Juan");
+        juan.setApellidoP("Lopez");
+        juan.setApellidoM("Garcia");
+
+        String nombre = juan.getNombre();
+        String noControl = juan.getNoControl();
+        System.out.println("El alumno " + nombre + " tiene noControl " + noControl);
     }
 }
