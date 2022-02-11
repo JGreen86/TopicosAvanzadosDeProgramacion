@@ -17,7 +17,10 @@ public class Main {
     Boolean w = false;
     Character z = 'a';
     String cadena = "Hola mundo!!!";
-
+    // funciones
+    static int suma(int a, int b) {
+        return a + b;
+    }
     public static void main(String[] args) {
         System.out.println("Hola mundo!!!");
         // arreglos
@@ -92,7 +95,8 @@ public class Main {
         for (int item : lista2) {
             System.out.println(item);
         }
-
-
+        System.out.println("=======================");
+        int c = suma(3,5);
+        System.out.println("c = " + c);
     }
 }
