@@ -4,6 +4,7 @@ package com.ites.sistemas;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -107,5 +108,35 @@ public class Main {
         String nombre = juan.getNombre();
         String noControl = juan.getNoControl();
         System.out.println("El alumno " + nombre + " tiene noControl " + noControl);
+
+        Alumno maria = new Alumno(
+                "R03958",
+                "Maria",
+                "Cota",
+                "Ruiz"
+        );
+        ArrayList<Alumno> alumnos = new ArrayList<>();
+        alumnos.add(juan);
+        alumnos.add(maria);
+        System.out.println("=======================");
+        System.out.println("Ingresa numero de control: ");
+        Scanner scanner = new Scanner(System.in);
+        noControl = scanner.nextLine();
+        Alumno fidel = new Alumno(noControl);
+
+        System.out.println("Ingresa nombre del alumno: ");
+        fidel.setNombre(scanner.nextLine());
+        alumnos.add(fidel);
+
+        for(i=0; i<alumnos.size(); i++) {
+            noControl = alumnos.get(i).getNoControl();
+            nombre = alumnos.get(i).getNombre();
+            System.out.println("El alumno " + nombre + " tiene noControl " + noControl);
+        }
+        for(Alumno alumno : alumnos) {
+            noControl = alumno.getNoControl();
+            nombre = alumno.getNombre();
+            System.out.println("El alumno " + nombre + " tiene noControl " + noControl);
+        }
     }
 }
