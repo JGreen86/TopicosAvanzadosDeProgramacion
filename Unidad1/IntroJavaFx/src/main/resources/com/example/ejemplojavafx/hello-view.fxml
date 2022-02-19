@@ -26,7 +26,7 @@
       <TextField fx:id="txt_email" layoutX="231.0" layoutY="208.0" prefHeight="26.0" prefWidth="355.0" />
       <Button fx:id="btn_cancelar" layoutX="511.0" layoutY="297.0" mnemonicParsing="false" onAction="#onCancelarButtonClick" text="Cancelar" />
       <Button fx:id="btn_guardar" layoutX="422.0" layoutY="297.0" mnemonicParsing="false" onAction="#onGuardarButtonClick" text="Guardar" />
-      <ComboBox fx:id="cmb_pais" layoutX="51.0" layoutY="251.0" prefHeight="26.0" prefWidth="537.0" />
+      <ComboBox fx:id="cmb_carrera" layoutX="51.0" layoutY="251.0" prefHeight="26.0" prefWidth="537.0" />
       <Label layoutX="14.0" layoutY="256.0" text="Pais:" />
    </children>
 </AnchorPane>

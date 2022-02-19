@@ -30,7 +30,7 @@ public class HelloController implements Initializable {
     @FXML
     private Button btn_guardar;
     @FXML
-    private ComboBox<String> cmb_pais;
+    private ComboBox<String> cmb_carrera;
 
     public void onGuardarButtonClick(ActionEvent actionEvent) {
         String nombre = txt_nombre.getText();
@@ -48,10 +48,10 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cmb_pais.setPromptText("Seleccione un pais");
-        ObservableList<String> listaDePaises = cmb_pais.getItems();
-        listaDePaises.add("Mexico");
-        listaDePaises.add("Brasil");
-        listaDePaises.add("Italia");
+        cmb_carrera.setPromptText("Seleccione un pais");
+        ObservableList<String> listaDeCarreras = cmb_carrera.getItems();
+        listaDeCarreras.add("Ingenieria en sistemas computacionales");
+        listaDeCarreras.add("Arquitectura");
+        listaDeCarreras.add("Contaduria");
     }
 }
