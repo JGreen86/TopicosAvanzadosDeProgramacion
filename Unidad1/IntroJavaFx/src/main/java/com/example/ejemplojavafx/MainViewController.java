@@ -9,6 +9,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -43,9 +44,19 @@ public class MainViewController implements Initializable {
             System.out.println("Error al construir la escena.");
         }
     }
-
+    public void onClickBorrarSeleccion(ActionEvent actionEvent) {
+        int noFila = tableView.getSelectionModel().getSelectedIndex();
+        tableView.getItems().remove(noFila);
+    }
+    public void onEditColumnaNombre(TableColumn.CellEditEvent<Usuario, String> evento) {
+        String nuevoNombre = evento.getNewValue();
+        int noFila = evento.getTablePosition().getRow();
+        tableView.getItems().get(noFila).setNombre(nuevoNombre);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        tbl_col_nombre.setCellFactory(TextFieldTableCell.forTableColumn());
+
         tbl_col_nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         tbl_col_apellidoP.setCellValueFactory(new PropertyValueFactory<>("apellidoP"));
         tbl_col_apellidoM.setCellValueFactory(new PropertyValueFactory<>("apellidoM"));
