@@ -3,18 +3,25 @@ package com.example.ejemplojavafx;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-import java.io.IOException;
-
-public class MainViewController {
+public class MainViewController implements Initializable {
     @FXML
     private MenuBar menuBar;
+    @FXML
+    private TableView<Usuario> tableView;
+    @FXML
+    private TableColumn<Usuario, String> tbl_col_nombre;
+    @FXML
+    private TableColumn<Usuario, String> tbl_col_apellidoP;
+    @FXML
+    private TableColumn<Usuario, String> tbl_col_apellidoM;
 
     public void onClickMenuArchivoCerrar(ActionEvent actionEvent) {
         Scene escena = menuBar.getScene();
@@ -35,5 +42,32 @@ public class MainViewController {
             alerta.setHeaderText("Error inesperado.");
             alerta.show();
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        tbl_col_nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        tbl_col_apellidoP.setCellValueFactory(new PropertyValueFactory<>("apellidoP"));
+        tbl_col_apellidoM.setCellValueFactory(new PropertyValueFactory<>("apellidoM"));
+        tableView.getItems().add(
+                new Usuario(
+                        "Homero",
+                        "J.",
+                        "Simpson",
+                        "homero@simpson.com",
+                        "Ingenieria en sistemas computaciones",
+                        47
+                )
+        );
+        tableView.getItems().add(
+                new Usuario(
+                        "Ned",
+                        "Flanders",
+                        "Garcia",
+                        "ned@flanders.com",
+                        "Gastronomia",
+                        48
+                )
+        );
     }
 }
