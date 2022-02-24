@@ -1,4 +1,4 @@
-package com.example.ejemplojavafx;
+package com.example.ejemplojavafx.models;
 
 public class Usuario {
     private String nombre;
