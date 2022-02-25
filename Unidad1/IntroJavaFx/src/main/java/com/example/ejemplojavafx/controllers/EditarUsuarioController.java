@@ -1,4 +1,4 @@
-package com.example.ejemplojavafx;
+package com.example.ejemplojavafx.controllers;
 
 
 import javafx.collections.ObservableList;
@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
+public class EditarUsuarioController implements Initializable {
     @FXML
     private TextField txt_nombre;
     @FXML

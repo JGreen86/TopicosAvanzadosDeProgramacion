@@ -1,5 +1,7 @@
-package com.example.ejemplojavafx;
+package com.example.ejemplojavafx.controllers;
 
+import com.example.ejemplojavafx.MainApplication;
+import com.example.ejemplojavafx.models.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +33,7 @@ public class MainViewController implements Initializable {
     }
     public void onClickMenuEditarUsuario(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("views/editar-usuario-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
             stage.setTitle("Editar usuario");
