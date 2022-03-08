@@ -1,6 +1,8 @@
 package com.example.ejemplojavafx.controllers;
 
 
+import com.example.ejemplojavafx.DataController;
+import com.example.ejemplojavafx.models.Usuario;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,6 +63,16 @@ public class EditarUsuarioController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // DataController
+        DataController dc = DataController.getInstance();
+        String nombre = dc.getNombre();
+        System.out.println("Nombre = " + nombre);
+
+        Usuario usuario = dc.consultarUsuario("C1203");
+        txt_nombre.setText(usuario.getNombre());
+        txt_apellidoP.setText(usuario.getApellidoP());
+
+
         cmb_pais.setPromptText("Seleccione un pais");
         ObservableList<String> listaDePaises = cmb_pais.getItems();
         listaDePaises.add("Mexico");
