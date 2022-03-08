@@ -1,5 +1,6 @@
 package com.example.ejemplojavafx.controllers;
 
+import com.example.ejemplojavafx.DataController;
 import com.example.ejemplojavafx.MainApplication;
 import com.example.ejemplojavafx.models.Usuario;
 import javafx.event.ActionEvent;
@@ -58,6 +59,10 @@ public class MainViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // DataController
+        DataController dc = DataController.getInstance();
+        dc.setNombre("Homero");
+
         tbl_col_nombre.setCellFactory(TextFieldTableCell.forTableColumn());
 
         tbl_col_nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));

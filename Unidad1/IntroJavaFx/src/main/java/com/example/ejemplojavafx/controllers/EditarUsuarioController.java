@@ -1,6 +1,7 @@
 package com.example.ejemplojavafx.controllers;
 
 
+import com.example.ejemplojavafx.DataController;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,6 +62,11 @@ public class EditarUsuarioController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // DataController
+        DataController dc = DataController.getInstance();
+        System.out.println("Nombre = " + dc.getNombre());
+
+
         cmb_carrera.setPromptText("Seleccione una carrera");
         ObservableList<String> listaDeCarreras = cmb_carrera.getItems();
         listaDeCarreras.add("Ingenieria en sistemas computacionales");
