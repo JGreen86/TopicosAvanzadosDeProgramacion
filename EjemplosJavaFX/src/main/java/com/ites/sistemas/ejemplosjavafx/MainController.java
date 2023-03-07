@@ -21,4 +21,13 @@ public class MainController {
         stage.setTitle("Formulario básico");
         stage.setScene(scene);
     }
+
+    public void onMenuItemTableViewClick(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("views/table-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Table view básico");
+        stage.setScene(scene);
+        stage.show();
+    }
 }

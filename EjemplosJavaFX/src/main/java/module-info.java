@@ -10,4 +10,6 @@ module com.ites.sistemas.ejemplosjavafx {
     exports com.ites.sistemas.ejemplosjavafx;
     opens com.ites.sistemas.ejemplosjavafx.formulariobasico to javafx.fxml;
     exports com.ites.sistemas.ejemplosjavafx.formulariobasico;
+    opens com.ites.sistemas.ejemplosjavafx.tableviewbasico to javafx.fxml;
+    exports com.ites.sistemas.ejemplosjavafx.tableviewbasico;
 }

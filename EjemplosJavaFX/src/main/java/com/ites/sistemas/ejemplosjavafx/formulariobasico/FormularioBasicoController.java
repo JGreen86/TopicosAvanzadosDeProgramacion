@@ -56,12 +56,11 @@ public class FormularioBasicoController implements Initializable {
     @FXML
     private void onBtnCancelarClick(ActionEvent actionEvent) throws IOException {
         Scene scene = ((Button) actionEvent.getSource()).getScene();
-           Stage stage = (Stage) scene.getWindow();
+        Stage stage = (Stage) scene.getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("views/main-view.fxml"));
         Scene mainScene = new Scene(fxmlLoader.load());
         stage.setTitle("Tópicos avanzados de programación");
         stage.setScene(mainScene);
-        stage.show();
     }
 
     @Override
