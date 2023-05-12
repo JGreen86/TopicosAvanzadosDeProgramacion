@@ -25,9 +25,7 @@ public class UsuarioService {
     public List<Usuario> getAllUsers() {
         EntityManagerFactory entityManagerFactory = HibernateUtils.getEntityManagerFactory();
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.getTransaction().begin();
         List<Usuario> result = entityManager.createQuery( "from Usuario", Usuario.class ).getResultList();
-        entityManager.getTransaction().commit();
         entityManager.close();
         return result;
     }
