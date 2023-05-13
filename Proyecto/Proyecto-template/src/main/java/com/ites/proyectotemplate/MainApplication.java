@@ -30,14 +30,22 @@ public class MainApplication extends Application {
     public static void main(String[] args) {
         UsuarioService usuarioService = new UsuarioService();
 
-        usuarioService.addUser(new Usuario("Homero","2","",48));
-        usuarioService.addUser(new Usuario("Lisa","2","",48));
-        usuarioService.addUser(new Usuario("Bart","2","",48));
+        usuarioService.addUser(new Usuario("Homero","J.","Simpson",48));
+        usuarioService.addUser(new Usuario("Lisa","Simpson","Lopez",10));
+        usuarioService.addUser(new Usuario("Bart","Simpson","Lopez",11));
 
         List<Usuario> result = usuarioService.getAllUsers();
         for ( Usuario usuario : result ) {
             System.out.println(usuario.getNombre());
         }
+
+        System.out.println("=========================");
+        Usuario lisa = usuarioService.getUserByID(2);
+        System.out.println(lisa.getNombre());
+        lisa.setEdad(11);
+        usuarioService.updateUser(lisa);
+        usuarioService.removeUser(lisa);
+
 
         HibernateUtils.closeEntityManagerFactory();
 
