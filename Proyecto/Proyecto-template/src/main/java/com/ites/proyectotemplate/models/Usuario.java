@@ -1,9 +1,6 @@
 package com.ites.proyectotemplate.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -15,6 +12,7 @@ public class Usuario {
     private String apellidoP;
     private String apellidoM;
     private int edad;
+    private Direccion direccion;
 
     public Usuario() {
 
@@ -68,5 +66,15 @@ public class Usuario {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "direcciones_id_direccion", referencedColumnName = "id_direccion")
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 }
