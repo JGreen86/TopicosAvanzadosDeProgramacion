@@ -59,10 +59,10 @@ public class MainApplication extends Application {
         Usuario lisa2 = usuarioService.getUserByID(2);
         System.out.println(lisa2.getNombre());
         System.out.println(lisa2.getDireccion().toString());
-        /*lisa.setEdad(11);
-        usuarioService.updateUser(lisa);
-        usuarioService.removeUser(lisa);*/
-
+        lisa2.setEdad(11);
+        usuarioService.updateUser(lisa2);
+        usuarioService.removeUser(lisa2);
+        direccionService.removeDireccion(direccion2);
 
         HibernateUtils.closeEntityManagerFactory();
 
