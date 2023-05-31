@@ -3,6 +3,9 @@ package com.ites.proyectotemplate.models;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.time.Instant;
+import java.util.Date;
+
 @Entity
 @Table( name = "usuarios" )
 public class Usuario {
@@ -13,6 +16,7 @@ public class Usuario {
     private String apellidoM;
     private int edad;
     private Direccion direccion;
+    private Instant fechaUltimoInicio;
 
     public Usuario() {
 
@@ -76,5 +80,13 @@ public class Usuario {
 
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
+    }
+
+    public Instant getFechaUltimoInicio() {
+        return fechaUltimoInicio;
+    }
+
+    public void setFechaUltimoInicio(Instant fechaUltimoInicio) {
+        this.fechaUltimoInicio = fechaUltimoInicio;
     }
 }

@@ -4,15 +4,15 @@ import com.ites.proyectotemplate.models.Direccion;
 import com.ites.proyectotemplate.models.Usuario;
 import com.ites.proyectotemplate.services.DireccionService;
 import com.ites.proyectotemplate.services.UsuarioService;
+import com.ites.proyectotemplate.utils.DateUtils;
 import com.ites.proyectotemplate.utils.HibernateUtils;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.Instant;
 import java.util.List;
 
 public class MainApplication extends Application {
@@ -42,17 +42,21 @@ public class MainApplication extends Application {
 
         Usuario homero = new Usuario("Homero","J.","Simpson",48);
         homero.setDireccion(direccion);
+        homero.setFechaUltimoInicio(Instant.now());
         usuarioService.addUser(homero);
 
         Usuario lisa = new Usuario("Lisa","Simpson","Lopez",10);
         lisa.setDireccion(direccion2);
+        lisa.setFechaUltimoInicio(Instant.now());
         usuarioService.addUser(lisa);
-        //usuarioService.addUser(new Usuario("Bart","Simpson","Lopez",11));
 
         List<Usuario> result = usuarioService.getAllUsers();
         for ( Usuario usuario : result ) {
             System.out.println(usuario.getNombre());
             System.out.println(usuario.getDireccion().toString());
+            System.out.println(DateUtils.getDate(usuario.getFechaUltimoInicio()));
+            System.out.println(DateUtils.getTime(usuario.getFechaUltimoInicio()));
+            System.out.println(DateUtils.getDateTime(usuario.getFechaUltimoInicio()));
         }
 
         System.out.println("=========================");
