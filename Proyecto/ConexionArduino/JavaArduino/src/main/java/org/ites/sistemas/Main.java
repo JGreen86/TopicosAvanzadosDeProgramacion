@@ -4,12 +4,13 @@ import com.fazecast.jSerialComm.*;
 
 public class Main {
     public static void main(String[] args) {
+        //SerialPort comPort = SerialPort.getCommPort("COM4");
         SerialPort comPort = SerialPort.getCommPorts()[0];
         comPort.openPort();
         comPort.addDataListener(new SerialPortMessageListener() {
             @Override
             public byte[] getMessageDelimiter() {
-                return new byte[] { (byte)0x3A };
+                return new byte[] { (byte)0x3A, (byte) 0x3D};
             }
 
             @Override
