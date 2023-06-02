@@ -6,7 +6,8 @@ public class Main {
     public static void main(String[] args) {
         //SerialPort comPort = SerialPort.getCommPort("COM4");
         SerialPort comPort = SerialPort.getCommPorts()[0];
-        comPort.openPort();
+        if (!comPort.isOpen())
+            comPort.openPort();
         comPort.addDataListener(new SerialPortMessageListener() {
             @Override
             public byte[] getMessageDelimiter() {
