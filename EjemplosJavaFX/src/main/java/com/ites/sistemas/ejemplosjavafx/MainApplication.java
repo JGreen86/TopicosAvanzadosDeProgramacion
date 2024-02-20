@@ -18,7 +18,13 @@ public class MainApplication extends Application {
         stage.show();
     }
 
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+    }
+
     public static void main(String[] args) {
+
         launch();
     }
 }

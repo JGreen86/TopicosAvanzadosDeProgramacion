@@ -18,7 +18,9 @@
           <Menu mnemonicParsing="false" text="Ejemplos">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#onMenuItemFrmBasicoClick" text="Formulario básico" />
-                  <MenuItem mnemonicParsing="false" onAction="#onMenuItemTableViewClick" text="TableView básico" />
+                <MenuItem mnemonicParsing="false" onAction="#onMenuItemTableViewClick" text="TableView básico" />
+                <MenuItem mnemonicParsing="false" onAction="#onMenuItemCPClick" text="Card View" />
+                <MenuItem mnemonicParsing="false" onAction="#onMenuItemStyleClick" text="Style View" />
             </items>
           </Menu>
         </menus>

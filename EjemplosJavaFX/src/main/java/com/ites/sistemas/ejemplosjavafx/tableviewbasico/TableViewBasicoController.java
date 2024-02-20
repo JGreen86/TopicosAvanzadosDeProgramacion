@@ -1,5 +1,6 @@
 package com.ites.sistemas.ejemplosjavafx.tableviewbasico;
 
+import com.ites.sistemas.ejemplosjavafx.SharedData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,8 +36,10 @@ public class TableViewBasicoController implements Initializable {
         tblColumnApellidoP.setCellValueFactory(new PropertyValueFactory<>("apellidoP"));
         tblColumnApellidoM.setCellValueFactory(new PropertyValueFactory<>("apellidoM"));
 
-        tblUsuarios.getItems().add(new Usuario("Homero","J.","Simpson"));
+        tblUsuarios.setItems(SharedData.getInstance().getUsuarios());
+
+        /*tblUsuarios.getItems().add(new Usuario("Homero","J.","Simpson"));
         tblUsuarios.getItems().add(new Usuario("Bart","Simpson","Lopez"));
-        tblUsuarios.getItems().add(new Usuario("Lisa","Simpson","Lopez"));
+        tblUsuarios.getItems().add(new Usuario("Lisa","Simpson","Lopez"));*/
     }
 }

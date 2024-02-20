@@ -1,0 +1,31 @@
+Label {
+    -fx-text-fill: red;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.titulo {
+    -fx-text-fill: blue;
+    -fx-font-size: 40px;
+}
+
+.parrafo {
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+}
+
+Button {
+    -fx-background-color: blue;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+Button:hover {
+    -fx-background-color: orange;
+    -fx-font-size: 22px;
+}

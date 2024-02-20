@@ -1,6 +1,8 @@
 package com.ites.sistemas.ejemplosjavafx.formulariobasico;
 
 import com.ites.sistemas.ejemplosjavafx.MainApplication;
+import com.ites.sistemas.ejemplosjavafx.SharedData;
+import com.ites.sistemas.ejemplosjavafx.tableviewbasico.Usuario;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +50,13 @@ public class FormularioBasicoController implements Initializable {
             alerta2.setHeaderText("Usuario registrado con éxito!!!");
             alerta2.setContentText(mensaje);
             alerta2.show();
+
+            Usuario usuario = new Usuario();
+            usuario.setNombre(nombre);
+            usuario.setApellidoP(apellidoP);
+            usuario.setApellidoM(apellidoM);
+
+            SharedData.getInstance().getUsuarios().add(usuario);
         } else {
             System.out.println("El usuario dió click en cancelar");
         }
