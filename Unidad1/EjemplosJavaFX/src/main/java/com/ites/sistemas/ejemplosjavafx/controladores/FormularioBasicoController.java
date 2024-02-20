@@ -1,8 +1,8 @@
-package com.ites.sistemas.ejemplosjavafx.formulariobasico;
+package com.ites.sistemas.ejemplosjavafx.controladores;
 
 import com.ites.sistemas.ejemplosjavafx.MainApplication;
 import com.ites.sistemas.ejemplosjavafx.SharedData;
-import com.ites.sistemas.ejemplosjavafx.tableviewbasico.Usuario;
+import com.ites.sistemas.ejemplosjavafx.modelos.Usuario;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

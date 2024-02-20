@@ -1,6 +1,6 @@
 package com.ites.sistemas.ejemplosjavafx;
 
-import com.ites.sistemas.ejemplosjavafx.tableviewbasico.Usuario;
+import com.ites.sistemas.ejemplosjavafx.modelos.Usuario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

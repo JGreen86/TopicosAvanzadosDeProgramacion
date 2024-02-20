@@ -1,4 +1,4 @@
-package com.ites.sistemas.ejemplosjavafx.tableviewbasico;
+package com.ites.sistemas.ejemplosjavafx.modelos;
 
 public class Usuario {
     private String nombre;
